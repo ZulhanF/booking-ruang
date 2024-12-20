@@ -1,4 +1,4 @@
-# 🎓 Sistem Booking ruangan untuk Gedung A10🏫
+# 🎓 Sistem Booking Ruangan untuk Gedung A10🏫
 
 Sebuah sistem simple untuk melihat ketersediaan kelas dan melakukan booking dalam hitungan detik!
 
