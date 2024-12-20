@@ -1,10 +1,10 @@
 {
-    "pj1": {
+    "zulhanf": {
         "password": "admin123",
         "role": "pj",
         "name": "Zulhan"
     },
-    "user1": {
+    "ahmaddialo": {
         "password": "user123",
         "role": "user",
         "name": "Ahmad"
