@@ -7,9 +7,7 @@ st.title("🎓Sistem Booking Ruangan")
 
 hide_streamlit_style = """
         <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
+        .css-1lcbmhc.e1fqkh3o3 {display: none;}  /* Menyembunyikan panel samping */
         </style>
         """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
