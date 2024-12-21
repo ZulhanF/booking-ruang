@@ -10,7 +10,7 @@ st.set_page_config(page_title="Booking Ruangan", page_icon="🎓", layout="wide"
 if "user" not in st.session_state:
     st.warning("Silakan login terlebih dahulu")
     if st.button("HOME"):
-        st.query_params()
+        st.query_params.clear()
     st.stop()
 
 ROOMS = [
