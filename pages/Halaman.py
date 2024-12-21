@@ -38,20 +38,20 @@ def get_datetime_options():
     return options
 
 def get_room_status(selected_datetime):
-    if not os.path.exists('bookings.json'):
-        with open('bookings.json', 'w') as f:
+    if not os.path.exists('data/ruangan.json'):
+        with open('data/ruangan.json', 'w') as f:
             json.dump({}, f)
     
     try:
-        with open('bookings.json', 'r') as f:
-            bookings = json.load(f)
+        with open('data/ruangan.json', 'r') as f:
+            ruangan = json.load(f)
         
         date_str = selected_datetime.strftime("%Y-%m-%d")
         time_str = f"{selected_datetime.strftime('%H')}:00 - {(selected_datetime + timedelta(hours=1)).strftime('%H')}:00"
-        booking_key = f"{date_str}_{time_str}"
+        ruangan_index = f"{date_str}_{time_str}"
         
-        if booking_key in bookings:
-            return bookings[booking_key]
+        if ruangan_index in ruangan:
+            return ruangan[ruangan_index]
         return {room: "Free" for room in ROOMS}
     except Exception as e:
         print(f"Error: {e}")
