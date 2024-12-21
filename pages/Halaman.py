@@ -72,8 +72,7 @@ selected_time = st.selectbox(
 st.divider()
 
 # Dapatkan status ruangan
-room_status = get_room_status(selected_date, selected_time)
-
+room_status = get_room_status(selected_date, int(selected_time.split(":")[0]))
 # Buat DataFrame
 df = pd.DataFrame(
     {"Nama Ruangan": ROOMS, "Status": [room_status.get(room, "Free") for room in ROOMS]}
