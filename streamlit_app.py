@@ -5,6 +5,15 @@ import time
 st.set_page_config(page_title="Booking Ruangan", page_icon="🎓")
 st.title("🎓Sistem Booking Ruangan")
 
+hide_streamlit_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 with st.form("login_form"):
     st.header("Login Page")
 
