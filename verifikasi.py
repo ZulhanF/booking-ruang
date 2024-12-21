@@ -1,5 +1,6 @@
 # login.py
 import json
+import streamlit as st
 
 
 def signIn(username, password):
@@ -10,6 +11,9 @@ def signIn(username, password):
 
         if username in users:
             if users[username]["password"] == password:
+                st.session_state["user"] = users[
+                    username
+                ]  # Simpan seluruh informasi pengguna
                 return users[username]["role"]
         return None
     except Exception as e:
