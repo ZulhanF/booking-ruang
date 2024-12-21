@@ -40,7 +40,7 @@ def get_datetime_options():
     return options
 
 
-def get_room_status(selected_datetime):
+def get_room_status(selected_date, selected_time):
     if not os.path.exists("data/ruangan.json"):
         with open("data/ruangan.json", "w") as f:
             json.dump({}, f)
@@ -49,8 +49,8 @@ def get_room_status(selected_datetime):
         with open("data/ruangan.json", "r") as f:
             ruangan = json.load(f)
 
-        date_str = selected_datetime.strftime("%Y-%m-%d")
-        time_str = f"{selected_datetime.strftime('%H')}:00 - {(selected_datetime + timedelta(hours=1)).strftime('%H')}:00"
+        date_str = selected_date.strftime("%Y-%m-%d")
+        time_str = f"{selected_time}:00 - {int(selected_time) + 1}:00"
         ruangan_index = f"{date_str}_{time_str}"
 
         if ruangan_index in ruangan:
@@ -72,7 +72,7 @@ selected_time = st.selectbox(
 st.divider()
 
 # Dapatkan status ruangan
-room_status = get_room_status(selected_datetime)
+room_status = get_room_status(selected_date, selected_time)
 
 # Buat DataFrame
 df = pd.DataFrame(
