@@ -66,7 +66,7 @@ st.title("🎓 Sistem Booking Ruangan")
 selected_date = st.date_input("Pilih Tanggal", datetime.now())
 selected_time = st.selectbox(
     "Pilih Waktu",
-    options=[f"{hour}:00" for hour in range(8, 17)],
+    options=[f"{hour}:00 - {hour + 1}:00" for hour in range(7, 17)],  # Interval satu jam mulai dari jam 7 pagi hingga jam 4 sore
 )
 
 st.divider()
