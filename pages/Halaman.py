@@ -1,19 +1,18 @@
-# pages/Halaman.py
 import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
 import json
 import os
 
-# Konfigurasi halaman
 st.set_page_config(page_title="Booking Ruangan", page_icon="🎓", layout="wide")
 
 # Cek status login
 if "user" not in st.session_state:
     st.warning("Silakan login terlebih dahulu")
+    if st.button("HOME"):
+        st.experimental_rerun()
     st.stop()
 
-# Data ruangan
 ROOMS = [
 "A10.01.01", 
 "A10.01.02",
@@ -27,19 +26,17 @@ ROOMS = [
 "A10.01.10"
 ]
 
-# Function untuk mendapatkan daftar datetime
 def get_datetime_options():
     options = []
     today = datetime.now()
     
-    for i in range(7):  # 7 hari ke depan
+    for i in range(7):  
         date = today + timedelta(days=i)
         for hour in [8, 9, 10, 11, 13, 14, 15, 16]:
             dt = date.replace(hour=hour, minute=0, second=0, microsecond=0)
             options.append(dt)
     return options
 
-# Function untuk mendapatkan status ruangan
 def get_room_status(selected_datetime):
     if not os.path.exists('bookings.json'):
         with open('bookings.json', 'w') as f:
@@ -60,17 +57,14 @@ def get_room_status(selected_datetime):
         print(f"Error: {e}")
         return {room: "Free" for room in ROOMS}
 
-# Header
 st.title("🎓 Sistem Booking Ruangan")
 
-# Pilihan datetime
 selected_datetime = st.selectbox(
     "Pilih Waktu",
     options=get_datetime_options(),
     format_func=lambda x: f"{x.strftime('%d %B %Y, %H:00')} - {(x + timedelta(hours=1)).strftime('%H:00')}"
 )
 
-# Garis pemisah
 st.divider()
 
 # Dapatkan status ruangan
@@ -87,7 +81,6 @@ st.subheader("Status Ruangan")
 styled_df = df.style.apply(lambda row: ['color: green' if x == 'Free' else 'color: red' for x in row], 
                           subset=['Status'])
 
-# Menggunakan st.dataframe dengan properti khusus
 st.dataframe(
     styled_df,
     column_config={
