@@ -63,7 +63,15 @@ def get_room_status(selected_date, selected_time):
 
 st.title("🎓 Sistem Booking Ruangan")
 
-selected_date = st.date_input("Pilih Tanggal", datetime.now())
+today = datetime.now()
+one_week_later = today + timedelta(days=7)
+
+selected_date = st.date_input(
+    "Pilih Tanggal",
+    min_value=today,
+    max_value=one_week_later,
+    value=today
+)
 selected_time = st.selectbox(
     "Pilih Waktu",
     options=[f"{hour}:00 - {hour + 1}:00" for hour in range(7, 17)],  # Interval satu jam mulai dari jam 7 pagi hingga jam 4 sore
