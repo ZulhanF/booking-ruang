@@ -1,12 +1,12 @@
 {
     "zulhanf": {
-        "password": "admin123",
-        "role": "Siswa random yang kebetulan lewat",
-        "name": "Zulhan"
+        "password": "zulhan123",
+        "role": "Mahasiswa",
+        "name": "Zulhan Fadhil"
     },
-    "ahmaddialo": {
-        "password": "user123",
-        "role": "user",
-        "name": "Ahmad"
+    "aditp": {
+        "password": "adit123",
+        "role": "Dosen",
+        "name": "Aditya Prapanca"
     }
 }
