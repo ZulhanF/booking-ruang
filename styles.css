@@ -33,6 +33,15 @@
   border-color: #C80036;
 }
 
+.st-aw, .st-av, .st-au, .st-at{
+  border-width: 3px;
+  border-color: #C80036;
+}
+
+.st-cn{
+  background-color: #FF6969;
+}
+
 .st-bw {
   caret-color: #0C1844;
 }
