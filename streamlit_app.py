@@ -27,7 +27,7 @@ with st.form("login_form"):
         if role:
             st.session_state["user"] = role
             st.success(f"Anda berhasil login sebagai {role}")
-            time.sleep(1)
+            time.sleep(2)
             st.switch_page("pages/Halaman.py")
         else:
             st.error("Username atau password salah!")

@@ -15,7 +15,7 @@ def signIn(username, password):
         print(f"Error: {e}")
         return None
 
-def add_user(username, password, role="user", name=""):
+def tambah_akun(username, password, role="user", name=""):
     """Menambah user baru"""
     try:
         with open("data/mahasiswa.json", "r") as f:
