@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.title("🎓Sistem Booking Ruangan")
+st.title("Selamat datang di halaman utama PJ!")
