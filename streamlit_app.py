@@ -11,7 +11,7 @@ with open("styles.css") as f:
 
 st.markdown(
     '<link rel="stylesheet" type="text/css" href="https://github.com/ZulhanF/booking-ruang/blob/main/styles.css">',
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 with st.form("login_form"):
     st.header("Login Page")
@@ -29,12 +29,14 @@ with st.form("login_form"):
 
     submitted = st.form_submit_button("Submit")
 
-    if submitted:
-        role = signIn(username, password)
-        if role:
-            st.session_state["user"] = role
-            st.success(f"Anda berhasil login sebagai {role}")
-            time.sleep(2)
+if submitted:
+    role = signIn(username, password)
+    if role:
+        st.success(f"Anda berhasil login sebagai {role}")
+        time.sleep(2)
+        if role == "Mahasiswa":
             st.switch_page("pages/Halaman.py")
-        else:
-            st.error("Username atau password salah!")
+        elif role == "Dosen":
+            st.switch_page("pages/halaman_dosen.py")
+    else:
+        st.error("Username atau password salah!")
