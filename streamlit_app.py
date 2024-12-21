@@ -9,16 +9,10 @@ st.title("🎓Sistem Booking Ruangan")
 with open("styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-.st-emotion-cache-qcpnpn {
-  border: 10px solid #C80036;
-  background-color: #FF6969;
-  border-radius: 25px;
-  color: #fff5e1;
-}
-</style>
-""", unsafe_allow_html=True)
+st.markdown(
+    '<link rel="stylesheet" type="text/css" href="https://github.com/ZulhanF/booking-ruang/blob/main/styles.css">',
+    unsafe_allow_html=True
+)
 with st.form("login_form"):
     st.header("Login Page")
 
