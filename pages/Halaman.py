@@ -33,7 +33,7 @@ def get_datetime_options():
 
     for i in range(7):
         date = today + timedelta(days=i)
-        for hour in [8, 9, 10, 11, 13, 14, 15, 16]:
+        for hour in [7, 8, 9, 10, 11, 13, 14, 15, 16]:
             dt = date.replace(hour=hour, minute=0, second=0, microsecond=0)
             options.append(dt)
     return options
