@@ -63,10 +63,10 @@ def get_room_status(selected_datetime):
 
 st.title("🎓 Sistem Booking Ruangan")
 
-selected_datetime = st.selectbox(
+selected_date = st.date_input("Pilih Tanggal", datetime.now())
+selected_time = st.selectbox(
     "Pilih Waktu",
-    options=get_datetime_options(),
-    format_func=lambda x: f"{x.strftime('%d %B %Y, %H:00')} - {(x + timedelta(hours=1)).strftime('%H:00')}",
+    options=[f"{hour}:00" for hour in range(8, 17)],
 )
 
 st.divider()
