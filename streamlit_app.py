@@ -33,7 +33,7 @@ if submitted:
     role = signIn(username, password)
     if role:
         st.success(f"Anda berhasil login sebagai {role}")
-        time.sleep(60)
+        time.sleep(2)
         if role == "Mahasiswa":
             st.switch_page("pages/Halaman.py")
         elif role == "Dosen":
