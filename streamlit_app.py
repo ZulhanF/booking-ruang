@@ -6,6 +6,10 @@ st.set_page_config(page_title="Booking Ruangan", page_icon="🎓")
 st.title("🎓Sistem Booking Ruangan")
 
 
+with open("styles.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
 with st.form("login_form"):
     st.header("Login Page")
 
