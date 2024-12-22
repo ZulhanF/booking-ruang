@@ -5,9 +5,67 @@
   color: #fff5e1;
 }
 
+.st-emotion-cache-asr1v9 h1 {
+  border: 10px solid #c80036;
+  background-color: #ff6969;
+  border-radius: 25px;
+  color: #fff5e1;
+}
+
 .st-emotion-cache-bm2z3a {
   color: #0c1844;
   background-color: #fff5e1;
+  opacity: 1;
+  background-image: linear-gradient(
+      30deg,
+      #ff6969 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #ff6969 87.5%,
+      #ff6969
+    ),
+    linear-gradient(
+      150deg,
+      #ff6969 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #ff6969 87.5%,
+      #ff6969
+    ),
+    linear-gradient(
+      30deg,
+      #ff6969 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #ff6969 87.5%,
+      #ff6969
+    ),
+    linear-gradient(
+      150deg,
+      #ff6969 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #ff6969 87.5%,
+      #ff6969
+    ),
+    linear-gradient(
+      60deg,
+      #c80036 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #c80036 75%,
+      #c80036
+    ),
+    linear-gradient(
+      60deg,
+      #c80036 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #c80036 75%,
+      #c80036
+    );
+  background-size: 58px 102px;
+  background-position: 0 0, 0 0, 29px 51px, 29px 51px, 0 0, 29px 51px;
 }
 
 .st-emotion-cache-h4xjwg {
