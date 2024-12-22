@@ -1,0 +1,30 @@
+{
+    "2024-12-22_07:00": {
+        "A10.01.01": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 2,
+            "endTime": "09:00"
+        },
+        "A10.01.03": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 1,
+            "endTime": "08:00"
+        },
+        "A10.01.04": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 2,
+            "endTime": "09:00"
+        }
+    },
+    "2024-12-22_08:00": {
+        "A10.01.04": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 2,
+            "endTime": "09:00"
+        }
+    }
+}
