@@ -196,9 +196,9 @@ with col1:
                 booking_key not in bookings
                 or selected_room not in bookings[booking_key]
             ):
-                st.error("Ruangan belum dibooking.")
+                st.warning("Ruangan belum dibooking.")
             elif bookings[booking_key][selected_room]["bookedBy"] != user_info["name"]:
-                st.error("Anda tidak memiliki izin untuk menghapus booking ini.")
+                st.error("❌ Anda tidak memiliki izin untuk menghapus booking ini.")
             else:
                 del bookings[booking_key][selected_room]
                 if not bookings[booking_key]:
