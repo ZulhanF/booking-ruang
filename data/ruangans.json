@@ -1,5 +1,5 @@
 {
-    "2024-12-22_07:00": {
+    "2025-01-03_07:00": {
         "A10.01.01": {
             "status": "Booked",
             "bookedBy": "Aditya Prapanca",
@@ -10,13 +10,28 @@
             "status": "Booked",
             "bookedBy": "Aditya Prapanca",
             "duration": 1,
-            "endTime": "08:00"
+            "endTime": "08:00",
+            "matkul": "Pemrograman Web"
         },
         "A10.01.04": {
             "status": "Booked",
             "bookedBy": "Aditya Prapanca",
             "duration": 2,
             "endTime": "09:00"
+        },
+        "A10.01.02": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 2,
+            "endTime": "09:00",
+            "matkul": "Sistem Operasi"
+        },
+        "A10.01.07": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 3,
+            "endTime": "10:00",
+            "matkul": "Pemrograman Mobile"
         }
     },
     "2024-12-22_08:00": {
@@ -25,6 +40,31 @@
             "bookedBy": "Aditya Prapanca",
             "duration": 2,
             "endTime": "09:00"
+        }
+    },
+    "2025-01-03_08:00": {
+        "A10.01.02": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 2,
+            "endTime": "09:00",
+            "matkul": "Sistem Operasi"
+        },
+        "A10.01.07": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 3,
+            "endTime": "10:00",
+            "matkul": "Pemrograman Mobile"
+        }
+    },
+    "2025-01-03_09:00": {
+        "A10.01.07": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 3,
+            "endTime": "10:00",
+            "matkul": "Pemrograman Mobile"
         }
     }
 }

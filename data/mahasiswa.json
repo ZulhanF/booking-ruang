@@ -7,6 +7,7 @@
     "aditp": {
         "password": "adit123",
         "role": "Dosen",
-        "name": "Aditya Prapanca"
+        "name": "Aditya Prapanca",
+        "matkul": ["Pemrograman Web", "Pemrograman Mobile", "Sistem Operasi"]
     }
 }
