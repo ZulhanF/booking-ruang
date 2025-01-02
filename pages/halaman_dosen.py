@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
+import time
 import json
 import os
 
@@ -180,6 +181,35 @@ with col1:
         },
         hide_index=True,
     )
+    selected_room = st.selectbox("Pilih Booking untuk Dihapus", ROOMS)
+    if st.button("🗑️Hapus Booking"):
+        try:
+            initialize_json()
+            with open("data/ruangans.json", "r") as f:
+                bookings = json.loads(f.read().strip() or "{}")
+
+            date_str = selected_date.strftime("%Y-%m-%d")
+            time_str = f"{int(selected_time.split(':')[0]):02d}:00"
+            booking_key = f"{date_str}_{time_str}"
+
+            if (
+                booking_key not in bookings
+                or selected_room not in bookings[booking_key]
+            ):
+                st.error("Ruangan belum dibooking.")
+            elif bookings[booking_key][selected_room]["bookedBy"] != user_info["name"]:
+                st.error("Anda tidak memiliki izin untuk menghapus booking ini.")
+            else:
+                del bookings[booking_key][selected_room]
+                if not bookings[booking_key]:
+                    del bookings[booking_key]
+                with open("data/ruangans.json", "w") as f:
+                    json.dump(bookings, f, indent=4)
+                st.success(f"🚮 Booking ruangan {selected_room} berhasil dihapus!")
+                time.sleep(2)
+                st.rerun()
+        except Exception as e:
+            st.error(f"Terjadi kesalahan: {e}")
 
 with col2:
     st.subheader("Booking Ruangan")
@@ -233,12 +263,13 @@ with col2:
                         with open("data/ruangans.json", "w") as f:
                             json.dump(bookings, f, indent=4)
 
-                        st.success(
-                            f"Ruangan {room_choice} berhasil dibooking untuk {duration} jam!"
+                        success_message = st.success(
+                            f"✅ Booking Berhasil dilakukan untuk Ruangan {room_choice}!\n\n"
                         )
+                        time.sleep(2)
                         st.rerun()
                     else:
-                        st.error("Ruangan tidak tersedia untuk durasi yang dipilih")
+                        st.error("❌ Ruangan tidak tersedia untuk durasi yang dipilih!")
 
             except Exception as e:
                 st.error(f"Terjadi kesalahan: {str(e)}")
