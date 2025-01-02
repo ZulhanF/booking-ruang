@@ -72,14 +72,21 @@ def get_room_status(selected_date, selected_time):
                     "status": "Booked",
                     "bookedBy": ruangan[booking_key][room]["bookedBy"],
                     "duration": ruangan[booking_key][room]["duration"],
+                    "matkul": ruangan[booking_key][room].get("matkul", "-"),
                 }
             else:
-                status_dict[room] = {"status": "Free", "bookedBy": "-", "duration": 0}
+                status_dict[room] = {
+                    "status": "Free",
+                    "bookedBy": "-",
+                    "duration": 0,
+                    "matkul": "-",
+                }
         return status_dict
     except Exception as e:
         print(f"Error reading JSON: {e}")
         return {
-            room: {"status": "Free", "bookedBy": "-", "duration": 0} for room in ROOMS
+            room: {"status": "Free", "bookedBy": "-", "duration": 0, "matkul": "-"}
+            for room in ROOMS
         }
 
 
@@ -101,19 +108,17 @@ selected_time = st.selectbox(
 )
 
 st.divider()
-
-# Dapatkan status ruangan
-# Get room status
 room_status = get_room_status(selected_date, int(selected_time.split(":")[0]))
-
-# Create DataFrame with booking details
 df = pd.DataFrame(
     {
         "Nama Ruangan": ROOMS,
         "Status": [room_status[room]["status"] for room in ROOMS],
         "Dosen": [room_status[room]["bookedBy"] for room in ROOMS],
+        "Mata Kuliah": [room_status[room]["matkul"] for room in ROOMS],
     }
 )
+# Dapatkan status ruangan
+# Get room status
 
 st.subheader("Status Ruangan")
 styled_df = df.style.apply(
@@ -121,12 +126,14 @@ styled_df = df.style.apply(
     subset=["Status"],
 )
 
+
 st.dataframe(
     styled_df,
     column_config={
         "Nama Ruangan": st.column_config.TextColumn("Nama Ruangan", width=200),
         "Status": st.column_config.TextColumn("Status", width=150),
         "Dosen": st.column_config.TextColumn("Dosen", width=200),
+        "Mata Kuliah": st.column_config.TextColumn("Mata Kuliah", width=250),
     },
     hide_index=True,
 )
