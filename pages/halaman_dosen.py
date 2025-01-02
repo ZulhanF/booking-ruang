@@ -54,7 +54,7 @@ def initialize_json():
 
 
 def get_room_status(selected_date, selected_time):
-
+    """Status ruangan pada waktu tertentu"""
     initialize_json()
     try:
         with open("data/ruangans.json", "r") as f:
@@ -72,21 +72,28 @@ def get_room_status(selected_date, selected_time):
                     "status": "Booked",
                     "bookedBy": ruangan[booking_key][room]["bookedBy"],
                     "duration": ruangan[booking_key][room]["duration"],
+                    "matkul": ruangan[booking_key][room].get("matkul", "-"),
                 }
             else:
-                status_dict[room] = {"status": "Free", "bookedBy": "-", "duration": 0}
+                status_dict[room] = {
+                    "status": "Free",
+                    "bookedBy": "-",
+                    "duration": 0,
+                    "matkul": "-",
+                }
         return status_dict
     except Exception as e:
         print(f"Error reading JSON: {e}")
         return {
-            room: {"status": "Free", "bookedBy": "-", "duration": 0} for room in ROOMS
+            room: {"status": "Free", "bookedBy": "-", "duration": 0, "matkul": "-"}
+            for room in ROOMS
         }
 
 
 def create_booking_entries(
-    bookings, date_str, start_hour, duration, room_choice, user_name
+    bookings, date_str, start_hour, duration, room_choice, user_name, matkul
 ):
-    """Buat antrian booking untuk waktu yang dipilih"""
+    """Create booking entries for all hours in duration"""
     for i in range(duration):
         current_hour = start_hour + i
         booking_key = f"{date_str}_{current_hour:02d}:00"
@@ -99,6 +106,7 @@ def create_booking_entries(
             "bookedBy": user_name,
             "duration": duration,
             "endTime": f"{(start_hour + duration):02d}:00",
+            "matkul": matkul,
         }
     return bookings
 
@@ -143,15 +151,16 @@ df = pd.DataFrame(
 col1, col2 = st.columns([2, 1])
 
 with col1:
-
+    # Get room status
     room_status = get_room_status(selected_date, int(selected_time.split(":")[0]))
 
-    # Create DataFrame dengan booking details
+    # Create DataFrame with all info
     df = pd.DataFrame(
         {
             "Nama Ruangan": ROOMS,
             "Status": [room_status[room]["status"] for room in ROOMS],
             "Dosen": [room_status[room]["bookedBy"] for room in ROOMS],
+            "Mata Kuliah": [room_status[room]["matkul"] for room in ROOMS],
         }
     )
 
@@ -167,6 +176,7 @@ with col1:
             "Nama Ruangan": st.column_config.TextColumn("Nama Ruangan", width=200),
             "Status": st.column_config.TextColumn("Status", width=150),
             "Dosen": st.column_config.TextColumn("Dosen", width=200),
+            "Mata Kuliah": st.column_config.TextColumn("Mata Kuliah", width=250),
         },
         hide_index=True,
     )
@@ -182,6 +192,10 @@ with col2:
         )
 
         duration = st.number_input("Durasi (jam)", min_value=1, max_value=4, value=1)
+
+        matkul = st.selectbox(
+            "Pilih Mata Kuliah", options=st.session_state.user.get("matkul", ["-"])
+        )
 
         submit = st.form_submit_button("Book Ruangan")
 
@@ -201,11 +215,11 @@ with col2:
                 else:
                     date_str = selected_date.strftime("%Y-%m-%d")
 
-                    # Cek ketersediaan ruangan
+                    # Check availability for all time slots
                     if check_room_availability(
                         bookings, date_str, start_hour, duration, room_choice
                     ):
-                        # Buat booking
+                        # Create bookings for all hours in duration
                         bookings = create_booking_entries(
                             bookings,
                             date_str,
@@ -213,6 +227,7 @@ with col2:
                             duration,
                             room_choice,
                             st.session_state.user["name"],
+                            matkul,
                         )
 
                         with open("data/ruangans.json", "w") as f:
@@ -227,3 +242,24 @@ with col2:
 
             except Exception as e:
                 st.error(f"Terjadi kesalahan: {str(e)}")
+
+
+def create_booking_entries(
+    bookings, date_str, start_hour, duration, room_choice, user_name, matkul
+):
+    """Create booking entries for all hours in duration"""
+    for i in range(duration):
+        current_hour = start_hour + i
+        booking_key = f"{date_str}_{current_hour:02d}:00"
+
+        if booking_key not in bookings:
+            bookings[booking_key] = {}
+
+        bookings[booking_key][room_choice] = {
+            "status": "Booked",
+            "bookedBy": user_name,
+            "duration": duration,
+            "endTime": f"{(start_hour + duration):02d}:00",
+            "matkul": matkul,
+        }
+    return bookings
