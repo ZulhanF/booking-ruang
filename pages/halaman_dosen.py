@@ -10,9 +10,18 @@ st.set_page_config(page_title="Booking Ruangan", page_icon="🎓", layout="wide"
 # Cek status login
 if "user" not in st.session_state:
     st.warning("Silakan login terlebih dahulu")
-    if st.button("HOME"):
-        st.query_params.clear()
-        st.query_params[""] = ""
+    st.markdown('''
+        <a href="/" target="_self" style="
+            text-decoration: none;
+            background-color: #FF4B4B;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;">
+            🏠 HOME
+        </a>
+    ''', unsafe_allow_html=True)
     st.stop()
 
 ROOMS = [
