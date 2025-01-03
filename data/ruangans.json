@@ -4,7 +4,8 @@
             "status": "Booked",
             "bookedBy": "Prof. Mahmud",
             "duration": 4,
-            "endTime": "11:00"
+            "endTime": "11:00",
+            "matkul": "Statistika"
         },
         "A10.01.03": {
             "status": "Booked",
