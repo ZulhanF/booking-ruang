@@ -4,10 +4,14 @@
         "role": "Mahasiswa",
         "name": "Zulhan Fadhil"
     },
-    "aditp": {
-        "password": "adit123",
+    "fikrin": {
+        "password": "fnf123",
         "role": "Dosen",
-        "name": "Aditya Prapanca",
+        "name": "Fikri Nendra Fadlurrahman",
         "matkul": ["Pemrograman Web", "Pemrograman Mobile", "Sistem Operasi"]
-    }
+    },
+    "akbarb19"":{
+        "password": "Bangetos18",
+        "role": "Mahasiswa",
+        "name": "Muhammad Dzikri Akbar"}
 }
