@@ -4,6 +4,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import json
 from typing import Dict, List, Optional
+import os
 
 ROOMS = [
     "A10.01.01",
