@@ -9,5 +9,12 @@
         "role": "Dosen",
         "name": "Aditya Prapanca",
         "matkul": ["Pemrograman Web", "Pemrograman Mobile", "Sistem Operasi"]
+    },
+    "agus": {
+        "password": "adit123",
+        "role": "Dosen",
+        "name": "Agus Prihanto",
+        "matkul": ["Jarkom Web", "Ciscos Mobile", "Mikrotik Operasi"]
     }
+
 }

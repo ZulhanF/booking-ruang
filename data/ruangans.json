@@ -32,6 +32,14 @@
             "duration": 3,
             "endTime": "10:00",
             "matkul": "Pemrograman Mobile"
+        },
+        "A10.01.05": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 1,
+            "endTime": "08:00",
+            "matkul": "Pemrograman Web",
+            "type": "Regular"
         }
     },
     "2024-12-22_08:00": {
@@ -46,9 +54,10 @@
         "A10.01.02": {
             "status": "Booked",
             "bookedBy": "Aditya Prapanca",
-            "duration": 2,
+            "duration": 1,
             "endTime": "09:00",
-            "matkul": "Sistem Operasi"
+            "matkul": "Pemrograman Web",
+            "type": "Regular"
         },
         "A10.01.07": {
             "status": "Booked",
@@ -65,6 +74,56 @@
             "duration": 3,
             "endTime": "10:00",
             "matkul": "Pemrograman Mobile"
+        }
+    },
+    "2025-01-02_07:00": {
+        "A10.01.05": {
+            "status": "Booked",
+            "bookedBy": "Aditya Prapanca",
+            "duration": 1,
+            "endTime": "08:00",
+            "matkul": "Pemrograman Web",
+            "type": "Regular"
+        },
+        "A10.01.01": {
+            "status": "Booked",
+            "bookedBy": "Agus Prihanto",
+            "duration": 1,
+            "endTime": "08:00",
+            "matkul": "Jarkom Web",
+            "type": "Regular"
+        },
+        "A10.01.02": {
+            "status": "Booked",
+            "bookedBy": "Agus Prihanto",
+            "duration": 1,
+            "endTime": "08:00",
+            "matkul": "Jarkom Web",
+            "type": "Regular"
+        },
+        "A10.01.03": {
+            "status": "Booked",
+            "bookedBy": "Agus Prihanto",
+            "duration": 1,
+            "endTime": "08:00",
+            "matkul": "Jarkom Web",
+            "type": "Regular"
+        },
+        "A10.01.04": {
+            "status": "Booked",
+            "bookedBy": "Agus Prihanto",
+            "duration": 1,
+            "endTime": "08:00",
+            "matkul": "Jarkom Web",
+            "type": "Regular"
+        },
+        "A10.01.06": {
+            "status": "Booked",
+            "bookedBy": "Agus Prihanto",
+            "duration": 1,
+            "endTime": "08:00",
+            "matkul": "Jarkom Web",
+            "type": "Regular"
         }
     }
 }
