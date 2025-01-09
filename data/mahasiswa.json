@@ -4,32 +4,31 @@
         "role": "Mahasiswa",
         "name": "Zulhan Fadhil"
     },
+    
     "fikrin": {
         "password": "fnf123",
         "role": "Dosen",
         "name": "Fikri Nendra Fadlurrahman",
         "matkul": ["Pemrograman Web", "Pemrograman Mobile", "Sistem Operasi"]
     },
-<<<<<<< HEAD
+    
     "agus": {
         "password": "adit123",
         "role": "Dosen",
         "name": "Agus Prihanto",
         "matkul": ["Jarkom Web", "Ciscos Mobile", "Mikrotik Operasi"]
-    }
+    },
 
-}
-=======
     "akbarb19":{
         "password": "Bangetos18",
         "role": "Mahasiswa",
         "name": "Muhammad Dzikri Akbar"
     },
     "mahmud":{
-    "password": "mahmud123",
-    "role": "Dosen",
-    "name": "Prof. Mahmud Prapanca",
-    "matkul": ["Jarkom Web", "IMK Mobile", "Android Operasi"]
+        "password": "mahmud123",
+        "role": "Dosen",
+        "name": "Prof. Mahmud Prapanca",
+        "matkul": ["Jarkom Web", "IMK Mobile", "Android Operasi"]
     }
 }
->>>>>>> d8cc2585b7a84da97acde743de1c8dfba9b2250d
+
