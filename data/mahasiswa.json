@@ -10,7 +10,6 @@
         "name": "Fikri Nendra Fadlurrahman",
         "matkul": ["Pemrograman Web", "Pemrograman Mobile", "Sistem Operasi"]
     },
-<<<<<<< HEAD
     "agus": {
         "password": "adit123",
         "role": "Dosen",
@@ -19,7 +18,6 @@
     }
 
 }
-=======
     "akbarb19":{
         "password": "Bangetos18",
         "role": "Mahasiswa",
@@ -32,4 +30,3 @@
     "matkul": ["Jarkom Web", "IMK Mobile", "Android Operasi"]
     }
 }
->>>>>>> d8cc2585b7a84da97acde743de1c8dfba9b2250d
