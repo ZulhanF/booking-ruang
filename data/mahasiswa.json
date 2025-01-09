@@ -15,9 +15,7 @@
         "role": "Dosen",
         "name": "Agus Prihanto",
         "matkul": ["Jarkom Web", "Ciscos Mobile", "Mikrotik Operasi"]
-    }
-
-}
+    },
     "akbarb19":{
         "password": "Bangetos18",
         "role": "Mahasiswa",
@@ -29,4 +27,5 @@
     "name": "Prof. Mahmud Prapanca",
     "matkul": ["Jarkom Web", "IMK Mobile", "Android Operasi"]
     }
+
 }
