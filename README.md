@@ -2,7 +2,7 @@
 
 Sebuah sistem simple untuk melihat ketersediaan kelas dan melakukan booking dalam hitungan detik!
 
-### Buka di link ini! [![*Buka di Link ini!*](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bookingruangan.streamlit.app/)
+### Buka di link ini! [![*Buka di Link ini!*](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sibookan.streamlit.app/)
 
 ### How to run it on your own machine
 
